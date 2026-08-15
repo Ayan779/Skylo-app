@@ -2,74 +2,115 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="description"
+      content="Skylo Weather provides current weather and a seven-day forecast."
+    />
 
     <link rel="stylesheet" href="style.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
 
-    <title>Skylo App</title>
+    <title>Skylo Weather</title>
   </head>
 
   <body>
     <div class="weather-app">
       <header>
+        <h2 class="app-title">✦ Skylo Weather</h2>
+
         <form id="search-form">
           <input
             type="search"
             id="search-form-input"
-            placeholder="Enter a city..."
+            placeholder="Search for a city..."
+            aria-label="Search for a city"
             required
           />
+
           <input type="submit" value="Search" />
+
+          <button
+            type="button"
+            id="current-location-button"
+            title="Use my current location"
+          >
+            📍 Current
+          </button>
         </form>
       </header>
 
       <main>
         <div class="weather-app-data">
-          <!-- Left side -->
-          <div>
+          <div class="current-weather-info">
             <h1 id="city">Mankato</h1>
 
             <p class="weather-app-details">
               <span id="time"></span>,
               <span id="description"></span>
-              <br />
-
-              Humidity:
-              <strong id="humidity">91%</strong>,
-
-              Wind:
-              <strong id="wind">4 mph</strong>
             </p>
+
+            <div class="weather-metric">
+              <span class="weather-metric-icon">💧</span>
+              <span>
+                Humidity:
+                <strong id="humidity">--</strong>
+              </span>
+            </div>
+
+            <div class="weather-metric">
+              <span class="weather-metric-icon">💨</span>
+              <span>
+                Wind:
+                <strong id="wind">--</strong>
+              </span>
+            </div>
           </div>
+          <div
+            class="weather-visual"
+            id="icon"
+            aria-label="Current weather icon"
+          ></div>
+
           <div class="weather-app-temperature-container">
-            <div id="icon"></div>
-            <div id="temperature">23</div>
+            <div id="temperature">--</div>
             <div class="weather-app-unit">°F</div>
           </div>
         </div>
-        <div class="weather-forecast" id="forecast"></div>
+        <div
+          class="weather-forecast"
+          id="forecast"
+          aria-label="Seven-day weather forecast"
+        ></div>
       </main>
 
       <footer>
         This project was coded by
         <a
-          href="https://www.shecodes.io/graduates/12221-ayan-ibrahim"
+          href="https://www.linkedin.com/in/ayan-ibrahim-7729401a7/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Ayan Ibrahim
-        </a>
-        and is open-sourced on
+        </a>,
+        is open-sourced on
         <a
           href="https://github.com/Ayan779/Skylo-app"
           target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub
-        </a>
+        </a>,
         and hosted on
         <a
           href="https://skylo-app.netlify.app/"
           target="_blank"
+          rel="noopener noreferrer"
         >
           Netlify
         </a>.
