@@ -1,38 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skylo app</title>
-</head>
-<body>
-    <header>
-        <input type="search" placeholder="Search...">
-        <input type="submit" value="Search">
-    </header>
-    <main>
-        <h1>Mankato</h1>
-        <div>
-            Precipitation:
-            <span id="precipitation">5%</span>
-        </div>
-        <div>
-            Humidity:
-            <span id="humidity">91%</span>
-        </div>
-        <div>
-            Wind:
-            <span id="wind">4mph/h</span>
-        </div>
-        <div>
-            🌦️73 oC
-        </div>
-    </main>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <footer>
-        This project was coded by <a href="https://www.shecodes.io/graduates/12221-ayan-ibrahim" target="_blank"> Ayan Ibrahim</a>
-        
-    </footer>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-</body>
+    <title>Skylo App</title>
+  </head>
+
+  <body>
+    <div class="weather-app">
+      <header>
+        <form id="search-form">
+          <input
+            type="search"
+            id="search-form-input"
+            placeholder="Enter a city..."
+            required
+          />
+          <input type="submit" value="Search" />
+        </form>
+      </header>
+
+      <main>
+        <div class="weather-app-data">
+          <!-- Left side -->
+          <div>
+            <h1 id="city">Mankato</h1>
+
+            <p class="weather-app-details">
+              <span id="time"></span>
+              <span id="description"></span>
+              <br />
+
+              Humidity:
+              <strong id="humidity">91%</strong>
+
+              Wind:
+              <strong id="wind">4 mph</strong>
+            </p>
+          </div>
+
+          <!-- Right side -->
+          <div class="weather-app-temperature-container">
+            <div id="icon"></div>
+            <div id="temperature">23</div>
+            <div class="weather-app-unit">°F</div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        This project was coded by
+        <a
+          href="https://www.shecodes.io/graduates/12221-ayan-ibrahim"
+          target="_blank"
+        >
+          Ayan Ibrahim
+        </a>
+        and is open-sourced on
+        <a
+          href="https://github.com/Ayan779/Skylo-app"
+          target="_blank"
+        >
+          GitHub
+        </a>
+        and hosted on
+        <a
+          href="https://skylo-app.netlify.app/"
+          target="_blank"
+        >
+          Netlify
+        </a>.
+      </footer>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
 </html>
